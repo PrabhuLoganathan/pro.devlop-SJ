@@ -3,12 +3,10 @@
  */
 package org.isha.pariksha.asserts;
 
-import org.eclipse.jetty.util.log.LoggerLog;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
-import org.testng.log4testng.Logger;
 
 /**
  * @author prasanna
@@ -17,6 +15,8 @@ import org.testng.log4testng.Logger;
 public class ParikshaAssert {
 	
 	
+	private static RemoteWebDriver driver;
+
 	public static void assertSelected(WebElement element){
 		if(element.isSelected())
 			Reporter.log(element.getText() + " Element is selected");
@@ -33,7 +33,7 @@ public class ParikshaAssert {
 	}
 	
 	
-	public static void assertTextInElement(WebElement element , String exectedValue){
+	public static void assertTextInElement(WebElement element , String exectedValue) throws Exception{
 	
 		
 		String elementTxt= element.getText();
@@ -42,9 +42,10 @@ public class ParikshaAssert {
 		Assert.assertEquals(elementTxt, exectedValue);
 		System.out.println("Found text " + exectedValue + " in element");
 		
+		
 	}
 	
-	public static void assertTextsInPageSource(RemoteWebDriver driver, String...strings) throws Exception{
+	public static void assertTextsInPageSource(RemoteWebDriver driver, String[] strings) throws Exception{
 		String pageSrc= driver.getPageSource();
 		for(String s: strings){
 			if(! pageSrc.contains(s)){
@@ -58,4 +59,6 @@ public class ParikshaAssert {
 		
 		
 	}
+	
+	
 }
