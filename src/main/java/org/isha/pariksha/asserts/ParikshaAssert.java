@@ -32,14 +32,14 @@ public class ParikshaAssert {
 	}
 	
 	
-	public static void assertTextInElement(WebElement element , String value){
+	public static void assertTextInElement(WebElement element , String exectedValue){
 	
 		
 		String elementTxt= element.getText();
 		if(element.getTagName().equalsIgnoreCase("input"))
 			elementTxt=element.getAttribute("value");
-		Assert.assertEquals(elementTxt, value);
-		System.out.println("Found text " + value + " in element");
+		Assert.assertEquals(elementTxt, exectedValue);
+		System.out.println("Found text " + exectedValue + " in element");
 		
 	}
 }
