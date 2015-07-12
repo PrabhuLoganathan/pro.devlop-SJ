@@ -1,5 +1,6 @@
 package org.isha.test.pms.indent;
 
+import org.isha.pariksha.asserts.ParikshaAssert;
 import org.isha.pariksha.common.Grid;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -8,6 +9,7 @@ import org.isha.pariksha.common.ElementUtils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import org.testng.annotations.AfterClass;
 
@@ -23,7 +25,7 @@ public class ValidateDefaultDate {
 	RemoteWebDriver driver=null;
 	
 	@Test
-	public void verifyDefaultDate(){
+	public void verifyDefaultDate() throws Exception{
 		
 		//driver=Grid.getDriver();
 		//driver=Grid.getDriver();
@@ -38,19 +40,15 @@ public class ValidateDefaultDate {
 				
 				 Date todaydate = new Date( );
 				 
-				 SimpleDateFormat dateFrm= new SimpleDateFormat("yyyy/mm/dd");
+				 SimpleDateFormat dateFrm= new SimpleDateFormat("yyyy/MM/dd");
 				 
 				 String systemdate = dateFrm.format(todaydate);
 				 System.out.println(systemdate);
 				 
-				String xpath="//label[conatins(text(),'Date:"+systemdate+"')]";
-				String dateval=ElementUtils.getElement(By.xpath(xpath), (RemoteWebDriver)driver).getText();
-		
-				System.out.println("Today date is"+dateval );
+				String xpath="//label[contains(text(),'Date:"+systemdate+"')]";
+				WebElement dateval=ElementUtils.getElement(By.xpath(xpath), (RemoteWebDriver)driver);
+				ParikshaAssert.assertTextInElement(dateval, "Date:"+systemdate);
 			
-				 
-				 
-				 
 				
 			}
 			
