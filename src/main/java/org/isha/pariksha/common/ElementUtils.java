@@ -21,6 +21,7 @@ public class ElementUtils {
 	
 
 	public static WebElement getElement(By by, RemoteWebDriver driver){
+		System.setProperty("TimeOutInSeconds", "30");
 		long timeOutInSeconds=Long.parseLong(System.getProperty("TimeOutInSeconds"));
 		
 		WebElement element = (new WebDriverWait(driver, timeOutInSeconds)).pollingEvery(300, TimeUnit.MILLISECONDS)
