@@ -32,12 +32,12 @@ public static RemoteWebDriver getDriver() throws MalformedURLException{
 
 
 void startHub(){
-	g
-	GridHubConfiguration config = new GridHubConfiguration()
-    config.setHost("localhost")
-    config.setTimeout(60000000)
-    Hub hub = new Hub(config)
-    hub.start()
+//	g
+//	GridHubConfiguration config = new GridHubConfiguration()
+//    config.setHost("localhost")
+//    config.setTimeout(60000000)
+//    Hub hub = new Hub(config)
+//    hub.start()
 }
 @Test
 
