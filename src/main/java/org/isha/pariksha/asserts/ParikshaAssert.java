@@ -45,7 +45,7 @@ public class ParikshaAssert {
 		
 	}
 	
-	public static void assertTextsInPageSource(RemoteWebDriver driver, String[] strings) throws Exception{
+	public static void assertTextsInPageSource(RemoteWebDriver driver, String...strings) throws Exception{
 		String pageSrc= driver.getPageSource();
 		for(String s: strings){
 			if(! pageSrc.contains(s)){
