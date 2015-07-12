@@ -5,6 +5,7 @@ package org.isha.pariksha.asserts;
 
 import org.eclipse.jetty.util.log.LoggerLog;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.log4testng.Logger;
@@ -40,6 +41,21 @@ public class ParikshaAssert {
 			elementTxt=element.getAttribute("value");
 		Assert.assertEquals(elementTxt, exectedValue);
 		System.out.println("Found text " + exectedValue + " in element");
+		
+	}
+	
+	public static void assertTextsInPageSource(RemoteWebDriver driver, String...strings) throws Exception{
+		String pageSrc= driver.getPageSource();
+		for(String s: strings){
+			if(! pageSrc.contains(s)){
+				throw new Exception(s +"text not found in page");
+				
+			}
+			else
+				System.out.println(s+" is present in the page");
+		}
+		
+		
 		
 	}
 }
