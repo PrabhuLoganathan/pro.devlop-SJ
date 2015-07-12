@@ -5,6 +5,7 @@ package org.isha.pariksha.asserts;
 
 import org.eclipse.jetty.util.log.LoggerLog;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.log4testng.Logger;
 
@@ -31,4 +32,10 @@ public class ParikshaAssert {
 	}
 	
 	
+	public static void assertTextInElement(WebElement element , String value){
+		
+		String elementTxt= element.getText();
+		Assert.assertEquals(elementTxt, value);
+		
+	}
 }
