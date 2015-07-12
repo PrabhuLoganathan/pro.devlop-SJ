@@ -20,9 +20,10 @@ public class Grid {
 	
 public static RemoteWebDriver getDriver(){
 	
+	DesiredCapabilities desireCapbFF= DesiredCapabilities.firefox();
+	RemoteWebDriver rm = new RemoteWebDriver(desireCapbFF);
 	
-	
-	return null;
+	return rm;
 }
 
 @Test
@@ -37,7 +38,10 @@ public static Capabilities getCapablities() throws IOException{
 	
 	String s= FirefoxDriver.BINARY;
 	FirefoxProfile fp= new FirefoxProfile();
-	return null;
+	DesiredCapabilities desireCapbFF= DesiredCapabilities.firefox();
+	RemoteWebDriver rm = new RemoteWebDriver(desireCapbFF);
+	
+	return null	;
 }
 
 
