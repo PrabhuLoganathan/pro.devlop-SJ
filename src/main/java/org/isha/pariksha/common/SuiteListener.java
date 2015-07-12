@@ -16,7 +16,7 @@ public class SuiteListener implements ISuiteListener {
 
 	public void onFinish(ISuite suite) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 }
