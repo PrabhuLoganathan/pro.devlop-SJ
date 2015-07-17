@@ -32,7 +32,7 @@ public class ValidationForRequiredFields
 		}
 		else
 			throw new Exception("Validation for entity not present");
-		
+			
 		//emailid field 
 		WebElement emaild = driver.findElement(By.xpath("//label[contains(text(),'Email ID:')]/following-sibling::span"));		
 		ParikshaAssert.assertTextInElement(emaild,"Invalid !!!");
