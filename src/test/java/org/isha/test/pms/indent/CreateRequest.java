@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.isha.pariksha.asserts.ParikshaAssert;
 import org.isha.pariksha.common.Grid;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 import org.isha.pariksha.common.ElementUtils;
@@ -49,9 +50,26 @@ RemoteWebDriver driver=null;
 		WebElement name_req=  driver.findElement(By.xpath("//label[contains(text(),'Requestor Name:')]/following-sibling::input"));
 		name_req.sendKeys("senthil");
 		
-
+		
 		WebElement mobile_no=  driver.findElement(By.xpath("//label[contains(text(),'Mobile No:')]/following-sibling::input"));
 		mobile_no.sendKeys("9940285219");
+		
+		WebElement prodect_neme=driver.findElement(By.id("custom-templates"));
+		//
+		prodect_neme.sendKeys("MotoG");
+		Thread.sleep(5000);
+		WebElement prodect_select=  driver.findElement(By.xpath("//label[contains(text(),'Item')]/following-sibling::select"));
+		prodect_select.click();
+		Thread.sleep(5000);
+		
+		//Select prod_selct=new Select(driver.findElement(By.id("custom-templates")));
+		//prod_selct.selectByVisibleText("MotoG");
+		
+		WebElement band_name=driver.findElement(By.xpath("//*[@id='itemtable']/tbody/tr/td[3]/div/div[1]/div[2]/input"));
+		
+		band_name.sendKeys("Xpress");
+		
+		
 		
 		
 	}
